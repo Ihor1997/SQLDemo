@@ -1,0 +1,30 @@
+2021-11-24 22:04:28 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXIST[*] SHARE_RATES(ID BIGINT AUTO_INCREMENT PRIMARY KEY,OPERDATA DATETIME NOT NULL,SHARE BIGINT NOT NULL,RATE DECIMAL(15,2) NOT NULL"; expected "EXISTS"; SQL statement:
+CREATE TABLE IF NOT EXIST share_rates(id BIGINT AUTO_INCREMENT PRIMARY KEY,operData DATETIME NOT NULL,SHARE BIGINT NOT NULL,rate DECIMAL(15,2) NOT NULL [42001-200]
+2021-11-24 22:05:25 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXIST[*] SHARE_RATES(ID BIGINT AUTO_INCREMENT PRIMARY KEY,OPERDATA DATETIME NOT NULL,SHARE BIGINT NOT NULL,RATE DECIMAL(15,2) NOT NULL)"; expected "EXISTS"; SQL statement:
+CREATE TABLE IF NOT EXIST share_rates(id BIGINT AUTO_INCREMENT PRIMARY KEY,operData DATETIME NOT NULL,SHARE BIGINT NOT NULL,rate DECIMAL(15,2) NOT NULL) [42001-200]
+2021-11-24 22:17:19 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXIST[*] SHARE_RATES(ID BIGINT AUTO_INCREMENT PRIMARY KEY,OPERDATA DATETIME NOT NULL,SHARE BIGINT NOT NULL,RATE DECIMAL(15,2) NOT NULL)"; expected "EXISTS"; SQL statement:
+CREATE TABLE IF NOT EXIST share_rates(id BIGINT AUTO_INCREMENT PRIMARY KEY,operData DATETIME NOT NULL,SHARE BIGINT NOT NULL,rate DECIMAL(15,2) NOT NULL) [42001-200]
+2021-11-27 18:41:48 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "TRADINGMETHOD" not found; SQL statement:
+ALTER TABLE traiders ADD CONSTRAINT check_traiders_tradingMethod CHECK(tradingMethod IN (1,2,3)) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.expression.condition.ConditionIn.optimize(ConditionIn.java:90)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:195)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:78)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at com.local.ihor.repository.BaseTable.executeSqlStatement(BaseTable.java:33)
+	at com.local.ihor.repository.BaseTable.executeSqlStatement(BaseTable.java:41)
+	at com.local.ihor.repository.TraidersRepository.createTable(TraidersRepository.java:22)
+	at com.local.ihor.StockExchange.createTablesAndForeignKeys(StockExchange.java:52)
+	at com.local.ihor.StockExchange.main(StockExchange.java:24)
